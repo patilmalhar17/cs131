@@ -1,0 +1,43 @@
+# 1. What is your home directory path?  How did you find out (commands used)?
+cd ~
+pwd
+
+# 2a. Using only "ls" (and maybe "grep"), can you find out which file under directory /proc/ contains 
+# information about memory (mem) on your server?
+ls /proc/ | grep mem
+cat meminfo
+
+# 2b. Which file contains information about the CPU's on your server?
+
+ls /proc/ | grep cpu
+cat cpuinfo
+
+# 3. Identify the operating system version. Which file under /etc/ contains this information?
+
+cd /etc/
+cat os-release
+
+#4a. Using the taxi dataset (2019-04.csv):
+# Sort the pickup location IDs in order to find the most popular pickup locations on April 2nd, 2019. Identify 
+# the top 3 locations.
+python3
+
+import pandas as pd
+
+df = pd.read_csv('2019-04.csv', usecols=['tpep_pickup_datetime', 'pulocationid'])
+
+#Substring of the pickup_datetime column must start with the date of April 2 2019
+april2 = df[df['tpep_pickup_datetime'].astype(str).str.startswith('2019-04-02')]
+
+top3 = april2['pulocationid'].value_counts().head(3).index.tolist()
+
+print(top3)
+
+#5b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
+april10 = df[df['tpep_pickup_datetime'].astype(str).str.startswith('2019-04-10')]
+
+top3_april10 = april10['pulocationid'].value_counts().head(3).index.tolist()
+
+print(top3_april10)
+
+

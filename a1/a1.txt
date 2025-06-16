@@ -1,0 +1,20 @@
+# 1. What is your home directory path?  How did you find out (commands used)?
+/home/malhar_s_patil
+
+# 2a. Using only "ls" (and maybe "grep"), can you find out which file under directory /proc/ contains
+#  information about memory (mem) on your server?
+meminfo
+
+# 2b. Which file contains information about the CPU's on your server?
+cpuinfo
+
+# 3. Identify the operating system version. Which file under /etc/ contains this information?
+os-release
+
+# 4a. Using the taxi dataset (2019-04.csv):
+# Sort the pickup location IDs in order to find the most popular pickup locations on April 2nd, 2019. Identify
+# the top 3 locations
+[161.0, 237.0, 236.0]
+
+#4b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
+[161.0, 237.0, 236.0]
