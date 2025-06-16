@@ -33,7 +33,7 @@ top3 = april2['pulocationid'].value_counts().head(3).index.tolist()
 
 print(top3)
 
-#5b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
+#4b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
 april10 = df[df['tpep_pickup_datetime'].astype(str).str.startswith('2019-04-10')]
 
 top3_april10 = april10['pulocationid'].value_counts().head(3).index.tolist()
