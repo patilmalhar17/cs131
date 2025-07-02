@@ -20,24 +20,9 @@ cat os-release
 #4a. Using the taxi dataset (2019-04.csv):
 # Sort the pickup location IDs in order to find the most popular pickup locations on April 2nd, 2019. Identify 
 # the top 3 locations.
-python3
+grep "2019-04-02" 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -3
 
-import pandas as pd
-
-df = pd.read_csv('2019-04.csv', usecols=['tpep_pickup_datetime', 'pulocationid'])
-
-#Substring of the pickup_datetime column must start with the date of April 2 2019
-april2 = df[df['tpep_pickup_datetime'].astype(str).str.startswith('2019-04-02')]
-
-top3 = april2['pulocationid'].value_counts().head(3).index.tolist()
-
-print(top3)
-
-#5b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
-april10 = df[df['tpep_pickup_datetime'].astype(str).str.startswith('2019-04-10')]
-
-top3_april10 = april10['pulocationid'].value_counts().head(3).index.tolist()
-
-print(top3_april10)
+#4b. Sort the pickup location IDs in order to find the most popular pickup locations on April 10th, 2019. Identify the top 3 locations.
+grep "2019-04-10" 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -3
 
 
