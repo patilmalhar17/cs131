@@ -1,0 +1,34 @@
+Student Summary
+
+Name: David
+Total: 195
+Average: 65
+Status: Fail
+
+
+Name: Eve
+Total: 265
+Average: 88.3333
+Status: Pass
+
+
+Name: Bob
+Total: 246
+Average: 82
+Status: Pass
+
+
+Name: Charlie
+Total: 270
+Average: 90
+Status: Pass
+
+
+Name: Alice
+Total: 253
+Average: 84.3333
+Status: Pass
+
+
+Top Scoring Student: Charlie who got 270
+Lowest Scoring Student: David who got 195
